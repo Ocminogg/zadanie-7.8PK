@@ -46,7 +46,7 @@ namespace zadanie_7._8
         public void Load(string Flag)
         {
             string TEXT = "";
-            
+            int id = 0;
             using (StreamReader sr = new StreamReader(this.path))
             {
                 if (Flag == "1")
@@ -59,7 +59,8 @@ namespace zadanie_7._8
                         {
                             break;
                         }
-                        Add(new Sotrudniki(args[0], Convert.ToDateTime(args[1]), args[2], Convert.ToInt32(args[3]), Convert.ToInt32(args[4]), args[5], args[6]));
+                        id++;////!!!!!!
+                        Add(new Sotrudniki(Convert.ToString(id), Convert.ToDateTime(args[1]), args[2], Convert.ToInt32(args[3]), Convert.ToInt32(args[4]), args[5], args[6]));
 
                     }
                 }
@@ -76,6 +77,7 @@ namespace zadanie_7._8
 
                         if (Convert.ToString(ID) == "")
                         {
+                            
                             break;
                         }
                         if (IDDel == Convert.ToString(ID))
@@ -169,6 +171,7 @@ namespace zadanie_7._8
                 this.sotrudnik = new Sotrudniki[6];
                 using (StreamReader sr = new StreamReader(this.path))
                 {
+                    id = 0;
                     while (!sr.EndOfStream)
                     {
                         string[] args = sr.ReadLine().Split('#');
@@ -177,7 +180,8 @@ namespace zadanie_7._8
                         {
                             break;
                         }
-                        Add(new Sotrudniki(args[0], Convert.ToDateTime(args[1]), args[2], Convert.ToInt32(args[3]), Convert.ToInt32(args[4]), args[5], args[6]));
+                        id++;////!!!!!!
+                        Add(new Sotrudniki(Convert.ToString(id), Convert.ToDateTime(args[1]), args[2], Convert.ToInt32(args[3]), Convert.ToInt32(args[4]), args[5], args[6]));
                     }
                 }
 
