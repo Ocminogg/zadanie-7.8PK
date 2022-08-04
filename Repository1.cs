@@ -46,7 +46,7 @@ namespace zadanie_7._8
         public void Load(string Flag)
         {
             string TEXT = "";
-
+            
             using (StreamReader sr = new StreamReader(this.path))
             {
                 if (Flag == "1")
